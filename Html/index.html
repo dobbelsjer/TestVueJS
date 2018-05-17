@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../Css/basic.css">
+    <title>Title</title>
+</head>
+<body>
+<!-- >>>>>>>>>OSEF
+<div>
+    <div id="app">
+        <H1>TEST1</H1>
+        <p>
+            {{ message }}
+        </p>
+    </div>
+    <div id="app2">
+        <p>
+            <label><input type="radio" name="check" value="0" onclick="setVisible();"/> Non</label>
+            <label><input type="radio" name="check" value="1" onclick="setVisible();"/> Oui</label>
+        </p>
+        <p v-if="seen">
+            Tu me vois ?
+        </p>
+        <p>Suite</p>
+    </div>
+</div>
+-->
+
+<div id="app3">
+
+    <form>
+        <p><label for="tvid">Tv Id: </label><input type="text" id="tvid" ref="tvid"/></p>
+        <p><label for="tvname">Tv name: </label><input type="text" id="tvname" ref="tvname"/></p>
+        <p><label for="ip">Tv ip: </label><input type="text" id="ip" ref="ip"/></p>
+        <p><label for="compo">Tv composition: </label><input type="text" id="compo" ref="compo"/></p>
+        <p><button @click.prevent="addTv()">Ajouter</button></p>
+    </form>
+
+    <ol>
+        <read-tv
+            v-for="Tv in Tvs"
+            v-bind:tvline="Tv"
+            v-bind:key="Tv.id">
+        </read-tv>
+    </ol>
+</div>
+
+<script src="../FrameWork/vue.min.js"></script>
+<!--<script src="../Js/printMessage.js"></script>
+<script src="../Js/visible.js"></script>-->
+<script src="../Js/Tv.js"></script>
+</body>
+</html>
